@@ -1,0 +1,20 @@
+SELECT 
+  *
+FROM `ds-and-ml-tutorials.sales_data.rfm_segment_data`;
+
+SELECT
+  COUNT(CASE WHEN STATUS = "Cancelled" THEN ORDERNUMBER ELSE NULL END) AS CANCELLED_ORDER,
+  COUNT(ORDERNUMBER) AS TOTAL_ORDER,
+  COUNT(CASE WHEN STATUS = "Cancelled" THEN ORDERNUMBER ELSE NULL END)/COUNT(ORDERNUMBER) * 100 AS CANCELLATION_RATE
+FROM `ds-and-ml-tutorials.sales_data.rfm_segment_data`;
+
+-- Cancellation Rate: 60/2823 = 2.12%
+
+SELECT
+  COUNT(ORDERNUMBER) AS TOTAL_ORDER,
+FROM `ds-and-ml-tutorials.sales_data.rfm_segment_data`
+WHERE STATUS = "Cancelled"; -- 60
+
+SELECT
+  COUNT(ORDERNUMBER) AS TOTAL_ORDER,
+FROM `ds-and-ml-tutorials.sales_data.rfm_segment_data`; -- 2823

@@ -1,0 +1,112 @@
+/*
+Command/Statement Types in SQL:
+
+DDL: DATA Definitional LANGUAGE [CREATE, REPLACE, DROP, ALTER, RENAME, TRUNCATE, COMMENT]
+
+DML: DATA Manipulation LANGUAGE [INSERT, UPDATE, DELETE], CASCADE
+
+DQL: DATA QUERY LANGUAGE [SELECT Type]
+
+
+SELECT, FROM, WHERE, AND, OR, IN, LIKE, ILIKE, AS (ALIAS), ORDER BY, LIMIT, TOP, OFFSET
+
+JOIN/INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN
+
+GROUPBY, DISTINCT, WHERE, HAVING; WHERE VS HAVING
+AGGREGATE FUNCTIONS: COUNT, DISTINCT COUNT, MIN, MAX, AVERAGE, PERCENTILE [MEDIAN, Q1, Q3], SD
+UNION, UNION ALL
+
+CASE WHEN, CAST
+WORKING WITH DATES IN SQL [DATEDIFF, EXTRACT, DATE_PART, TO_DATE, STR_TO_DATE]
+COALESCE, NULLIF
+
+
+WINDOW FUNCTION [RANK, DENSE RANK, ROW_NUMBER, LEAD, LAG, SUM(), ST_VALUE, LAST_VALUE, NTH_VALUE, NTILE, ROLLING_AVERAGE]
+PIVOT table / CROSSTAB function
+
+
+
+DCL: DATA CONTROL LANGUAGE
+
+1. GRANT: This command is used to give users access privileges to the database. These privileges can include the ability to select, insert, update, delete, and so on, over database objects like tables and views.
+Syntax: GRANT privilege_name ON object_name TO user_name;
+For example, GRANT SELECT ON employees TO user123; gives user123 the permission to read data from the employees table.
+
+
+2. REVOKE: This command is used to remove previously granted access privileges from a user.
+Syntax: REVOKE privilege_name ON object_name FROM user_name;
+For example, REVOKE SELECT ON employees FROM user123; would remove user123‘s permission to read data from the employees table.
+
+
+
+
+TCL: TRANSACTION CONTROL LANGUAGE
+
+--Transaction Starts with Begin
+BEGIN;
+
+--Commits all your changes in Database
+COMMIT;
+
+--Rollbacks your updates if commit is not issued
+ROLLBACK;
+
+
+BEGIN TRANSACTION (or sometimes just BEGIN): This command is used to start a new transaction. It marks the point at which the data referenced in a transaction is logically and physically consistent.
+Syntax: BEGIN TRANSACTION;
+Note: In many SQL databases, a transaction starts implicitly with any SQL statement that accesses or modifies data, so explicit use of BEGIN TRANSACTION is not always necessary.
+
+COMMIT: This command is used to permanently save all changes made in the current transaction.
+Syntax: COMMIT;
+When you issue a COMMIT command, the database system will ensure that all changes made during the current transaction are saved to the database.
+ROLLBACK: This command is used to undo changes that have been made in the current transaction.
+Syntax: 
+
+ROLLBACK;
+If you issue a ROLLBACK command, all changes made in the current transaction are discarded, and the state of the data reverts to what it was at the beginning of the transaction.
+
+*/
+
+
+
+
+
+/*
+-- Where to Focus?
+
+Topics Need to be Covered to work as a Mid-level Data Scientist:
+
+--How to Create a Database and its tables [CREATE, REPLACE, DROP], Database Constraints [Primary Key, FK, NOT NULL, UNIQUE, AUTOINCREMENT, CHECK]
+
+--How to modify/clean data in a Database [INSERT, UPDATE, DELETE, TRUNCATE, CASCADE]
+
+--How to Query a Database to find your desired result or for reporting:
+
+Data Types in SQL [VARCHAR, CHAR, NUMBER, FLOAT, INT, DATE, DATETIME, BOOLEAN]
+
+SELECT, FROM, WHERE, IN, ALIAS (AS), ORDER, LIMIT, TOP, OFFSET
+
+GROUPBY, WHERE, HAVING; WHERE VS HAVING
+AGGREGATE FUNCTIONS: COUNT, DISTINCT, MIN, MAX, AVERAGE, PERCENTILE [MEDIAN, Q1, Q3], SD
+UNION, UNION ALL, JOIN [LEFT JOIN, INNER JOIN ,RIGHT JOIN, FULL JOIN, SELF JOIN, CROSS JOIN]
+
+CASE WHEN, CAST
+WORKING WITH DATES IN SQL [DATEDIFF, EXTRACT, DATE_PART, TO_DATE]
+COALESCE, NULLIF
+
+SUBQUERY [WHERE, FROM, SELECT], CTE (COMMON TABLE EXPRESSION); SUBQUERY VS CTE
+ORDER OF EXECUTION
+VIEW, MATERIALIZED VIEWS
+
+WINDOW FUNCTION [RANK, DENSE RANK, ROW_NUMBER, LEAD, LAG, SUM(), ST_VALUE, LAST_VALUE, NTH_VALUE, NTILE, ROLLING_AVERAGE]
+PIVOT table / CROSSTAB function
+
+Automation in SQL/Reporting: FUNCTION, STORE PROCEDURE, TRIGGER
+
+*** 
+1. Data Cleaning in SQL
+2. RFM Segmentation
+3. Cohort Analysis
+
+*/
+
